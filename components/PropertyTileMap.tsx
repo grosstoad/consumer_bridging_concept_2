@@ -1,12 +1,14 @@
  'use client'
  
-import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer } from 'react-leaflet'
+ import 'leaflet/dist/leaflet.css'
+ import { MapContainer, TileLayer } from 'react-leaflet'
+ import type { LatLngExpression } from 'leaflet'
 
 export default function PropertyTileMap() {
+ 	const mapCenter: LatLngExpression = [-37.770, 144.995]
 	return (
 		<MapContainer
-			center={[-37.770, 144.995]}
+ 			center={mapCenter}
 			zoom={13}
 			style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}
 			zoomControl={false}
